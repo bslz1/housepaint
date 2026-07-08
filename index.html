@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>זועבי — שלושה דורות של צבעים, משפחה אחת</title>
+<meta name="description" content="צבעים מקצועיים לבתים היפים בארץ מאז 1984. משפחה בלבד, ללא קבלני משנה. קירות, עץ ומתכת — הגנה, תיקון, הכנה וגימור.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Zoabi Family Painters",
+  "telephone": "050-591-1931",
+  "areaServed": [
+    "Caesarea",
+    "Zichron Yaakov",
+    "Tel Aviv",
+    "The Sharon"
+  ],
+  "serviceType": [
+    "Interior painting",
+    "Exterior painting",
+    "Wall repair",
+    "Wood restoration",
+    "Metal finishing",
+    "Preparation and finishing"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,400;1,9..144,300;1,9..144,340&family=Instrument+Sans:wght@400;500&family=Frank+Ruhl+Libre:wght@300;400&family=Assistant:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ZOABI — one continuous story, told in plates
+   v1.1 · Hebrew first · the wall opens, the people appear later
+   ============================================================ */
+
+:root{
+  --ivory:      #F5F0E8;
+  --linen:      #EFE8DB;
+  --limestone:  #E6DCCA;
+  --sand:       #D9CBB2;
+  --oak:        #A98C6B;
+  --umber:      #756350;
+  --ink:        #2C2620;
+  --ink-60:     rgba(44,38,32,.68);
+  --ink-40:     rgba(44,38,32,.56);
+  --ink-15:     rgba(44,38,32,.15);
+  --ink-08:     rgba(44,38,32,.08);
+  --serif: "Fraunces", "Frank Ruhl Libre", Georgia, serif;
+  --sans: "Instrument Sans", "Assistant", "Helvetica Neue", sans-serif;
+  --ease-slow: cubic-bezier(.16,.72,.28,.99);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{ background:var(--sand); color:var(--ink); }
+
+/* fine paper grain over everything */
+body::after{
+  content:"";
+  position:fixed; inset:-50%;
+  width:200%; height:200%;
+  pointer-events:none;
+  z-index:2000;
+  opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1,h2,h3{ font-family:var(--serif); font-weight:340; line-height:1.12; letter-spacing:-0.01em; }
+em{ font-style:italic; font-weight:300; }
+
+/* Hebrew: no italics, gentler tracking */
+html[lang="he"] em,
+html[lang="he"] i,
+html[lang="he"] .hero-sub,
+html[lang="he"] .finish-line{ font-style:normal; }
+html[lang="he"] h1, html[lang="he"] h2, html[lang="he"] h3,
+html[lang="he"] blockquote{ letter-spacing:0; line-height:1.22; }
+html[lang="he"] .label,
+html[lang="he"] .folio,
+html[lang="he"] .proof li,
+html[lang="he"] .nav-cta,
+html[lang="he"] .lang-toggle,
+html[lang="he"] .pair-caption,
+html[lang="he"] .m-loc,
+html[lang="he"] .finish-services,
+html[lang="he"] .invite-note,
+html[lang="he"] footer .wrap{ letter-spacing:.1em; }
+html[lang="he"] .wordmark{ letter-spacing:.16em; }
+
+.label{
+  font-family:var(--sans);
+  font-size:11px; font-weight:500;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:rgba(44,38,32,.60);
+}
+.wrap{ max-width:1360px; margin:0 auto; padding:0 clamp(24px, 6vw, 96px); }
+
+/* folio — the book's running head */
+.folio{
+  display:flex; align-items:center; gap:18px;
+  font-family:var(--sans);
+  font-size:11px; font-weight:500;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:rgba(44,38,32,.60);
+}
+.folio::after{ content:""; width:56px; height:1px; background:var(--ink-15); }
+.folio b{ font-family:var(--serif); font-style:italic; font-weight:300; color:var(--oak); letter-spacing:.08em; }
+
+/* reveal — objects appearing the way light does */
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity 1.6s var(--ease-slow), transform 1.6s var(--ease-slow);
+  transition-delay:var(--d, 0s);
+}
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  *{ animation:none !important; }
+}
+
+/* photography as plates */
+.photo{
+  position:relative;
+  overflow:hidden;
+  background:var(--limestone);
+}
+.photo img{
+  display:block;
+  width:100%; height:100%;
+  object-fit:cover;
+  filter:saturate(.9) contrast(1.01);
+  transition:transform 2.6s var(--ease-slow);
+}
+.photo:hover img{ transform:scale(1.03); }
+/* ============================================================
+   NAV
+   ============================================================ */
+nav{
+  position:fixed; top:0; left:0; right:0;
+  z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:32px clamp(24px, 6vw, 96px);
+  transition:background 1s var(--ease-slow), padding .8s var(--ease-slow), box-shadow 1s;
+}
+nav.scrolled{
+  padding:18px clamp(24px, 6vw, 96px);
+  background:rgba(245,240,232,.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--ink-08);
+}
+nav:not(.scrolled) .wordmark,
+nav:not(.scrolled) .nav-cta,
+nav:not(.scrolled) .lang-toggle{
+  color:#F3EEE6;
+  text-shadow:none;
+}
+nav:not(.scrolled) .wordmark span{ color:#F3EEE6; }
+nav:not(.scrolled) .nav-cta{ border-color:#F3EEE6; }
+.wordmark{
+  font-family:var(--serif);
+  font-size:19px; font-weight:400;
+  letter-spacing:.30em; text-transform:uppercase;
+  color:var(--ink); text-decoration:none;
+}
+.wordmark span{
+  color:var(--ink-40); font-size:10px; font-family:var(--sans);
+  letter-spacing:.28em; display:block; margin-top:2px; font-weight:500;
+}
+.nav-side{ display:flex; align-items:center; gap:clamp(20px, 2.5vw, 40px); }
+.nav-cta{
+  font-family:var(--sans); font-size:12px; font-weight:500;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink); text-decoration:none;
+  padding-bottom:4px;
+  border-bottom:1px solid var(--ink-15);
+  transition:border-color .6s;
+}
+.nav-cta:hover{ border-color:var(--ink); }
+.lang-toggle{
+  appearance:none; background:none; border:none; cursor:pointer;
+  font-family:var(--sans); font-size:11px; font-weight:500;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-40);
+  transition:color .6s;
+}
+.lang-toggle:hover{ color:var(--ink); }
+
+/* ============================================================
+   HERO — a finished wall, holding the afternoon
+   ============================================================ */
+.hero{
+  position:relative;
+  height:100svh; min-height:640px;
+  overflow:hidden;
+  display:flex; align-items:flex-end;
+}
+.hero .photo{ position:absolute; inset:0; }
+.hero .photo img{
+  animation:heroSettle 4s var(--ease-slow) both;
+}
+@keyframes heroSettle{
+  from{ transform:scale(1.05); }
+  to  { transform:scale(1); }
+}
+.hero-scrim{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(0deg, rgba(245,240,232,.94) 0%, rgba(245,240,232,.62) 22%, rgba(245,240,232,0) 52%);
+}
+.hero-content{
+  position:relative; z-index:5;
+  width:100%;
+  padding-bottom:clamp(48px, 8vh, 96px);
+}
+.hero h1{
+  font-size:clamp(40px, 5.2vw, 80px);
+  max-width:14ch;
+}
+.hero-sub{
+  margin-top:26px;
+  font-family:var(--serif);
+  font-style:italic; font-weight:300;
+  font-size:clamp(18px, 1.7vw, 24px);
+  color:var(--umber);
+  max-width:36ch;
+}
+.hero-line{
+  margin-top:30px;
+  font-size:14.5px;
+  color:var(--ink-60);
+  max-width:44ch;
+}
+/* the hero's quiet invitation — an underlined line of text, not a button */
+.hero-cta{
+  display:inline-flex;
+  align-items:baseline;
+  gap:12px;
+  margin-top:44px;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(17px, 1.5vw, 21px);
+  color:var(--ink);
+  text-decoration:none;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--ink-60);
+  transition:border-color .8s var(--ease-slow);
+}
+.hero-cta::after{
+  content:"→";
+  font-family:var(--sans);
+  font-size:.85em;
+  transition:transform .8s var(--ease-slow);
+}
+html[dir="rtl"] .hero-cta::after{ content:"←"; }
+.hero-cta:hover{ border-color:var(--ink); }
+.hero-cta:hover::after{ transform:translateX(4px); }
+html[dir="rtl"] .hero-cta:hover::after{ transform:translateX(-4px); }
+.hero-content .reveal{ transition-duration:2.2s; }
+
+/* ============================================================
+   PROOF — the ledger, before any storytelling
+   ============================================================ */
+.proof{
+  background:var(--ivory);
+  border-bottom:1px solid var(--ink-08);
+  padding:clamp(48px, 7vh, 80px) 0;
+}
+.proof ul{
+  list-style:none;
+  display:flex; flex-wrap:wrap;
+  justify-content:center;
+  column-gap:clamp(28px, 3.5vw, 56px);
+  row-gap:18px;
+}
+.proof li{
+  font-family:var(--sans);
+  font-size:12px; font-weight:500;
+  letter-spacing:.24em; text-transform:uppercase;
+  color:var(--ink-60);
+  display:flex; align-items:center; gap:clamp(28px, 3.5vw, 56px);
+  white-space:nowrap;
+}
+.proof li + li::before{
+  content:"";
+  width:1px; height:14px;
+  background:var(--ink-15);
+}
+.mobile-proof-contact{ display:none; }
+
+/* ============================================================
+   PLATE i — TRUST (typography page, almost empty)
+   ============================================================ */
+.plate-trust{
+  padding:clamp(110px, 15vh, 190px) 0;
+  background:var(--ivory);
+}
+.plate-trust .inner{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:clamp(48px, 7vw, 128px);
+  align-items:end;
+}
+.plate-trust blockquote{
+  font-family:var(--serif);
+  font-weight:340;
+  font-size:clamp(32px, 3.8vw, 60px);
+  line-height:1.2;
+  max-width:16ch;
+  margin-top:36px;
+}
+.plate-trust blockquote em{ color:var(--umber); }
+.plate-trust .aside{
+  font-size:15.5px;
+  color:var(--ink-60);
+  max-width:40ch;
+  padding-bottom:8px;
+}
+
+/* ============================================================
+   PLATE ii — PROTECT (the covered bookshelf, contained & quiet)
+   ============================================================ */
+.plate-protect{
+  background:var(--ivory);
+  padding:clamp(100px, 13vh, 170px) 0;
+}
+.plate-protect .inner{
+  display:grid;
+  grid-template-columns:6fr minmax(300px, 5fr);
+  gap:clamp(40px, 5vw, 96px);
+  align-items:center;
+  padding-inline-end:clamp(24px, 6vw, 96px);
+  max-width:none;
+}
+.plate-protect .photo{
+  height:min(82vh, 880px);
+  background:linear-gradient(180deg, var(--linen), var(--limestone));
+}
+.plate-protect .photo img{ object-fit:contain; filter:saturate(.92) contrast(1.0); }
+.plate-protect .text{ max-width:460px; }
+.plate-protect h2{
+  font-size:clamp(30px, 3.2vw, 50px);
+  margin-top:26px;
+}
+.plate-protect p{
+  margin-top:22px;
+  font-size:15.5px;
+  color:var(--ink-60);
+}
+
+/* ============================================================
+   PLATE iii — REPAIR (text, image bleeding to the edge)
+   ============================================================ */
+.plate-repair{
+  background:var(--ivory);
+  padding:clamp(100px, 13vh, 170px) 0 0;
+}
+.plate-repair .inner{
+  display:grid;
+  grid-template-columns:minmax(280px, 4fr) 7fr;
+  gap:clamp(40px, 5vw, 96px);
+  align-items:center;
+  padding-inline-start:clamp(24px, 6vw, 96px);
+  max-width:none;
+}
+.plate-repair .text{ max-width:420px; margin-inline-start:auto; padding:48px 0; }
+.plate-repair h2{
+  font-size:clamp(30px, 3.2vw, 50px);
+  margin-top:26px;
+}
+.plate-repair p{
+  margin-top:22px;
+  font-size:15.5px;
+  color:var(--ink-60);
+}
+.plate-repair .photo{ height:min(84vh, 900px); }
+
+/* ============================================================
+   PLATE iv — PREPARE (the family appears — full bleed)
+   ============================================================ */
+.plate-prepare{
+  position:relative;
+  height:min(92vh, 980px);
+  overflow:hidden;
+  display:flex; align-items:flex-end;
+  margin-top:clamp(100px, 13vh, 170px);
+}
+.plate-prepare .photo{ position:absolute; inset:0; }
+.plate-prepare .plate-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(12deg, rgba(36,31,24,.62) 0%, rgba(36,31,24,.24) 34%, rgba(36,31,24,0) 60%);
+}
+html[dir="rtl"] .plate-prepare .plate-scrim{
+  background:linear-gradient(-12deg, rgba(36,31,24,.62) 0%, rgba(36,31,24,.24) 34%, rgba(36,31,24,0) 60%);
+}
+.plate-prepare .plate-text{
+  position:relative; z-index:5;
+  width:100%;
+  padding-bottom:clamp(44px, 7vh, 88px);
+  color:#F3EDDF;
+}
+.plate-prepare .folio{ color:rgba(243,237,223,.65); }
+.plate-prepare .folio::after{ background:rgba(243,237,223,.3); }
+.plate-prepare .folio b{ color:rgba(217,197,164,.95); }
+.plate-prepare h2{
+  font-size:clamp(30px, 3.4vw, 54px);
+  max-width:19ch;
+  margin-top:26px;
+  color:#F6F1E5;
+}
+.plate-prepare p{
+  margin-top:18px;
+  font-size:15px;
+  color:rgba(243,237,223,.78);
+  max-width:46ch;
+}
+
+/* ============================================================
+   PLATE v — FINISH (almost silent)
+   ============================================================ */
+.plate-finish{
+  background:linear-gradient(180deg, var(--ivory) 0%, var(--linen) 100%);
+  padding:clamp(90px, 12vh, 150px) 0 clamp(110px, 14vh, 190px);
+  text-align:center;
+}
+.plate-finish .folio{ justify-content:center; }
+.plate-finish .folio::after{ display:none; }
+.plate-finish h2{
+  font-size:clamp(34px, 4.4vw, 70px);
+  max-width:16ch;
+  margin:34px auto 0;
+  position:relative; z-index:5;
+}
+.plate-finish h2 em{ color:var(--umber); }
+.plate-finish .finish-media{
+  max-width:760px;
+  margin:calc(clamp(22px, 2.6vw, 42px) * -1) auto 0; /* the headline overlaps the plate */
+  position:relative; z-index:1;
+}
+html[lang="he"] .plate-finish .finish-media{
+  margin:clamp(34px, 4vw, 62px) auto 0;
+}
+.plate-finish .photo{ aspect-ratio:4/5; max-height:72vh; }
+.plate-finish .finish-line{
+  margin:40px auto 0;
+  font-family:var(--serif);
+  font-style:italic; font-weight:300;
+  font-size:clamp(19px, 1.8vw, 26px);
+  color:var(--umber);
+}
+.plate-finish .finish-services{
+  margin:18px auto 0;
+  font-size:13px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ink-40); font-weight:500;
+}
+
+/* ============================================================
+   SELECTED TRANSFORMATIONS — a quiet chapter of paired states.
+   The before is treated with the same respect as the after.
+   ============================================================ */
+.diptych{
+  background:linear-gradient(180deg, #2E2820 0%, #241F18 100%);
+  color:#EFE8DA;
+  padding:clamp(100px, 13vh, 170px) 0;
+}
+.diptych .folio{ color:rgba(239,232,218,.58); }
+.diptych .folio::after{ background:rgba(239,232,218,.26); }
+.diptych .folio b{ color:rgba(217,197,164,.9); }
+.diptych h2{
+  font-size:clamp(30px, 3.4vw, 54px);
+  margin-top:26px;
+  max-width:18ch;
+  color:#F3EDDF;
+}
+/* each story: a small label, two photographs, nothing else */
+.t-story{ margin-top:clamp(110px, 14vh, 190px); }
+.t-label{
+  display:block;
+  font-size:11px; letter-spacing:.26em; text-transform:uppercase;
+  color:rgba(239,232,218,.62); font-weight:500;
+}
+.diptych .pair{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+}
+/* the "before" must sit where reading begins, in both directions */
+.diptych .photo{ aspect-ratio:4/5; max-height:76vh; }
+/* the bedroom wall: two states of one wall, gently staggered */
+.t-duo{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:5fr 7fr;
+  gap:clamp(20px, 2.5vw, 44px);
+  align-items:start;
+}
+.t-duo .duo-b{ margin-top:clamp(48px, 6vw, 110px); }
+.diptych .pair-caption{
+  display:flex; justify-content:space-between;
+  margin-top:20px;
+  font-size:11px; letter-spacing:.26em; text-transform:uppercase;
+  color:rgba(239,232,218,.68); font-weight:500;
+}
+.diptych .pair-caption i{
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:14px; text-transform:none; letter-spacing:.02em;
+  color:rgba(239,232,218,.74);
+}
+
+/* ============================================================
+   MOMENTS — two homes. Location, one sentence.
+   ============================================================ */
+.moments{
+  background:var(--ivory);
+  padding:clamp(110px, 14vh, 180px) 0;
+}
+.moments-head{ margin-bottom:clamp(64px, 8vh, 110px); }
+.moments h2{
+  font-size:clamp(30px, 3.6vw, 56px);
+  margin-top:26px;
+  max-width:20ch;
+}
+.moment{ margin-bottom:clamp(72px, 9vh, 130px); }
+.moment:last-of-type{ margin-bottom:0; }
+.moment .m-caption{
+  margin-top:20px;
+  display:flex; align-items:baseline; gap:32px; flex-wrap:wrap;
+}
+.moment .m-loc{
+  font-size:11px; letter-spacing:.26em; text-transform:uppercase;
+  color:rgba(44,38,32,.60); font-weight:500;
+}
+.moment .m-line{
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(16px, 1.5vw, 21px);
+  color:var(--ink-60);
+}
+.moment-a{ display:grid; grid-template-columns:3fr 6fr 3fr; }
+.moment-a > *{ grid-column:2; }
+.moment-a .photo{ aspect-ratio:4/5; max-height:76vh; }
+.moment-b{ display:grid; grid-template-columns:4fr 8fr; }
+.moment-b > *{ grid-column:2; }
+.moment-b .photo{ aspect-ratio:16/10; }
+.moment-b .photo img{ object-position:center 25%; }
+
+/* the family — one honest paragraph, set like a colophon */
+.colophon{
+  background:var(--ivory);
+  border-top:1px solid var(--ink-08);
+  padding:clamp(90px, 12vh, 150px) 0;
+}
+.colophon .inner{ max-width:720px; margin:0 auto; }
+.colophon p{
+  margin-top:34px;
+  font-family:var(--serif);
+  font-weight:340;
+  font-size:clamp(19px, 1.8vw, 25px);
+  line-height:1.65;
+  color:var(--ink);
+}
+.colophon p em{ color:var(--umber); }
+
+/* ============================================================
+   INVITATION — the story's last line
+   ============================================================ */
+.invite{
+  background:linear-gradient(180deg, var(--linen) 0%, var(--sand) 140%);
+  padding:clamp(100px, 14vh, 190px) 0 clamp(80px, 11vh, 140px);
+  text-align:center;
+}
+.invite h2{
+  font-size:clamp(38px, 5vw, 76px);
+  max-width:14ch;
+  margin:30px auto 0;
+}
+.invite h2 em{ color:var(--umber); }
+.invite-sub{
+  margin:30px auto 0;
+  font-size:16px; color:var(--ink-60); max-width:44ch;
+}
+.invite-phone{
+  display:inline-block;
+  margin-top:48px;
+  font-family:var(--serif);
+  font-weight:340;
+  font-size:clamp(26px, 2.6vw, 40px);
+  letter-spacing:.04em;
+  color:var(--ink);
+  text-decoration:none;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--ink-15);
+  transition:border-color .8s var(--ease-slow);
+  direction:ltr; /* the number reads left-to-right in both languages */
+  unicode-bidi:isolate;
+}
+.invite-phone:hover{ border-color:var(--ink-60); }
+.invite-referral{
+  margin:40px auto 0;
+  max-width:46ch;
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(17px, 1.6vw, 22px);
+  line-height:1.5;
+  color:var(--umber);
+}
+.invite-note{
+  margin-top:60px;
+  font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+  color:rgba(44,38,32,.60); font-weight:500;
+}
+
+footer{
+  background:var(--sand);
+  padding:36px 0;
+}
+footer .wrap{
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:16px;
+  font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(60,48,34,.58); font-weight:500;
+}
+
+/* ============================================================
+   MOBILE — its own rhythm
+   ============================================================ */
+@media (max-width: 900px){
+  body{ font-size:15px; }
+
+  nav{ padding:22px 24px; }
+  nav.scrolled{ padding:14px 24px; }
+  .wordmark{ font-size:15px; letter-spacing:.26em; white-space:nowrap; }
+  .wordmark span{ font-size:9px; white-space:nowrap; }
+  .nav-side{ gap:16px; }
+  .nav-cta{ font-size:10px; letter-spacing:.14em; white-space:nowrap; }
+  .lang-toggle{ font-size:10px; letter-spacing:.14em; }
+}
+@media (max-width: 600px){
+  .nav-cta{ display:none; } /* the invitation closes the story; the nav stays quiet */
+
+  .hero{ min-height:560px; }
+  .hero-content{ padding-bottom:clamp(30px, 5vh, 46px); }
+  .hero-scrim{
+    background:linear-gradient(0deg, rgba(245,240,232,.96) 6%, rgba(245,240,232,.6) 34%, rgba(245,240,232,0) 62%);
+  }
+  .hero h1{ font-size:clamp(36px, 10vw, 52px); }
+  .hero-sub{ margin-top:18px; font-size:18px; }
+  .hero-line{ display:none; }
+  .hero-cta{ margin-top:28px; }
+
+  .proof{ padding:40px 0; }
+  .proof .wrap{ text-align:center; }
+  .proof ul{ flex-direction:column; align-items:center; row-gap:14px; }
+  .proof li{ gap:0; font-size:12.5px; letter-spacing:.3em; }
+  .proof li + li::before{ display:none; }
+  .mobile-proof-contact{
+    display:inline-block;
+    margin-top:28px;
+    font-family:var(--serif);
+    font-size:21px;
+    font-weight:340;
+    color:var(--ink);
+    text-decoration:none;
+    padding-bottom:7px;
+    border-bottom:1px solid var(--ink-15);
+    direction:ltr;
+    unicode-bidi:isolate;
+  }
+
+  .plate-trust{ padding:88px 0; }
+  .plate-trust .inner{ grid-template-columns:1fr; gap:36px; }
+  .plate-trust blockquote{ font-size:clamp(30px, 8.4vw, 40px); }
+
+  .plate-protect{ padding:88px 0; }
+  .plate-protect .inner{ grid-template-columns:1fr; padding:0; gap:0; }
+  .plate-protect .photo{ height:64svh; order:2; margin:0 24px; }
+  .plate-protect .text{ max-width:none; padding:0 24px 40px; order:1; }
+
+  .plate-repair{ padding-top:88px; }
+  .plate-repair .inner{ grid-template-columns:1fr; padding:0; gap:0; }
+  .plate-repair .text{ max-width:none; margin:0; padding:0 24px 44px; }
+  .plate-repair .photo{ height:72svh; }
+
+  .plate-prepare{ height:auto; min-height:82svh; margin-top:88px; }
+  /* a narrow slice of a wide photograph: keep the painter in frame */
+  .plate-prepare .photo img{ object-position:52% 40% !important; }
+  .plate-prepare .plate-scrim,
+  html[dir="rtl"] .plate-prepare .plate-scrim{
+    background:linear-gradient(0deg, rgba(36,31,24,.72) 0%, rgba(36,31,24,.28) 44%, rgba(36,31,24,0) 68%);
+  }
+
+  .plate-finish{ padding:88px 0 100px; }
+  .plate-finish .finish-media{ margin-top:-14px; padding:0 12px; }
+  .plate-finish .photo{ aspect-ratio:3/4; }
+
+  .diptych{ padding:88px 0; }
+  .t-story{ margin-top:80px; }
+  .diptych .pair{ grid-template-columns:1fr; gap:3px; }
+  .diptych .photo{ aspect-ratio:1/1; max-height:none; }
+  .diptych .pair-caption{ margin-top:14px; }
+  .diptych .before-block{ margin-bottom:24px; }
+  .t-duo{ grid-template-columns:1fr; gap:0; }
+  .t-duo .duo-a{ margin-bottom:24px; }
+  .t-duo .duo-b{ margin-top:0; }
+
+  .moments{ padding:88px 0; }
+  .moment{ margin-bottom:72px; }
+  .moment-a, .moment-b{ display:block; }
+  .moment-a .photo{ aspect-ratio:4/5; }
+  .moment-b .photo{ aspect-ratio:4/3; }
+
+  .colophon{ padding:80px 0; }
+  .invite{ padding:88px 0 72px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="wordmark" href="#top"><span data-i18n="wm">זועבי</span><span data-i18n="wm_sub">צבעים · מאז 1984</span></a>
+  <div class="nav-side">
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language">English</button>
+    <a class="nav-cta" href="#invite" data-i18n="nav_cta">ספרו לנו על הבית שלכם</a>
+  </div>
+</nav>
+
+<!-- ════════ ARRIVAL — a finished wall, holding the afternoon ════════ -->
+<header class="hero" id="top">
+  <figure class="photo">
+    <img src="assets/hero-wall.jpg" alt="Palm shadows falling across a freshly painted white garden wall" style="object-position:center 42%;" decoding="async">
+  </figure>
+  <div class="hero-scrim"></div>
+  <div class="wrap hero-content">
+    <h1 class="reveal" data-i18n="hero_h1">שלושה דורות של צבעים. משפחה אחת.</h1>
+    <p class="hero-sub reveal" style="--d:.25s" data-i18n="hero_sub">צביעת פנים וחוץ מוקפדת לבתים יפים, מאז 1984.</p>
+    <p class="hero-line reveal" style="--d:.45s" data-i18n="hero_line">משפחת צבעים אחת — בלי קבלני משנה, ועם הביטחון להשאיר אותנו לבד בבית.</p>
+    <a class="hero-cta reveal" style="--d:.6s" href="#invite" data-i18n="hero_cta">ספרו לנו על הבית שלכם</a>
+  </div>
+</header>
+
+<!-- ════════ THE LEDGER ════════ -->
+<section class="proof">
+  <div class="wrap">
+    <ul>
+      <li class="reveal" data-i18n="p1">40+ שנים</li>
+      <li class="reveal" style="--d:.08s" data-i18n="p2">שלושה דורות</li>
+      <li class="reveal" style="--d:.16s" data-i18n="p3">משפחה בלבד</li>
+      <li class="reveal" style="--d:.24s" data-i18n="p4">בלי פרסום</li>
+      <li class="reveal" style="--d:.32s" data-i18n="p5">בעלי הבית משאירים לנו מפתח</li>
+      <li class="reveal" style="--d:.4s" data-i18n="p6">ללא קבלני משנה</li>
+    </ul>
+    <a class="mobile-proof-contact reveal" style="--d:.48s" href="tel:+972505911931">050-591-1931</a>
+  </div>
+</section>
+
+<!-- ════════ PLATE i — TRUST ════════ -->
+<section class="plate-trust">
+  <div class="wrap inner">
+    <div>
+      <div class="folio reveal"><b>i</b><span data-i18n="f_trust">הכול מתחיל במפתחות</span></div>
+      <blockquote class="reveal" style="--d:.15s" data-i18n="trust_q">יש לקוחות שנשארים בבית בזמן שאנחנו עובדים. יש כאלה שבוחרים לצאת ומשאירים לנו מפתח.</blockquote>
+    </div>
+    <p class="aside reveal" style="--d:.3s" data-i18n="trust_aside">במשך יותר מארבעים שנה, לקוחות מרוצים המשיכו להעביר את השם שלנו למשפחה, לחברים ולשכנים. כל בית חדש הגיע דרך הבית שקדם לו. גם היום, בעלי בתים רבים ממשיכים בשגרת חייהם בזמן שאנחנו עובדים. בעינינו, זה ההישג הגדול ביותר שלנו — גדול מכל קיר שצבענו.</p>
+  </div>
+</section>
+
+<!-- ════════ PLATE ii — PROTECT (the covered bookshelf) ════════ -->
+<section class="plate-protect">
+  <div class="inner">
+    <figure class="photo reveal">
+      <img src="assets/covered.jpg" alt="A client's bookshelf wrapped carefully in protective sheeting, every book sealed away" loading="lazy" decoding="async">
+    </figure>
+    <div class="text">
+      <div class="folio reveal" style="--d:.1s"><b>ii</b><span data-i18n="f_protect">הגנה</span></div>
+      <h2 class="reveal" style="--d:.2s" data-i18n="protect_h2">לפני שאנחנו נוגעים בקיר, אנחנו מגינים על כל מה שבבית.</h2>
+      <p class="reveal" style="--d:.35s" data-i18n="protect_p">רצפות, רהיטים, מדפים, כל ספר — מכוסים ומוגנים לפני שנפתח פח צבע אחד.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PLATE iii — REPAIR ════════ -->
+<section class="plate-repair">
+  <div class="inner">
+    <div class="text">
+      <div class="folio reveal"><b>iii</b><span data-i18n="f_repair">תיקון</span></div>
+      <h2 class="reveal" style="--d:.15s" data-i18n="repair_h2">אנחנו מתקנים את מה שהזמן שחק.</h2>
+      <p class="reveal" style="--d:.3s" data-i18n="repair_p">סדקים נפתחים וממולאים. הטיח נעשה שלם. עץ עייף חוזר לחיים. עבודה טובה מתחילה הרבה לפני הצבע — על קירות, עץ ומתכת.</p>
+    </div>
+    <figure class="photo reveal" style="--d:.2s">
+      <img src="assets/repair.jpg" alt="An oak windowsill mid-restoration, freshly repaired wood beside the original stain" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<!-- ════════ PLATE iv — PREPARE (the family appears) ════════ -->
+<section class="plate-prepare">
+  <figure class="photo">
+    <img src="assets/protect.jpg?v=20260708-1" alt="Two family painters at work inside a home, the furniture wrapped in protective sheeting" style="object-position:center 40%;" loading="lazy" decoding="async">
+  </figure>
+  <div class="plate-scrim"></div>
+  <div class="wrap plate-text">
+    <div class="folio reveal"><b>iv</b><span data-i18n="f_prepare">הכנה</span></div>
+    <h2 class="reveal" style="--d:.15s" data-i18n="prepare_h2">מלוטש, מוכן — ונבדק באור משיק.</h2>
+    <p class="reveal" style="--d:.3s" data-i18n="prepare_p">ההכנה היא רוב העבודה, והחלק שאיש לעולם לא יראה. שני דורות עובדים זה לצד זה, בשקט ובקפידה.</p>
+  </div>
+</section>
+
+<!-- ════════ PLATE v — FINISH (almost silent) ════════ -->
+<section class="plate-finish">
+  <div class="wrap">
+    <div class="folio reveal"><b>v</b><span data-i18n="f_finish">גימור</span></div>
+    <h2 class="reveal" style="--d:.15s" data-i18n="finish_h2">כשהעבודה נעשית נכון,<br>רואים את הבית — לא את העבודה.</h2>
+    <div class="finish-media reveal" style="--d:.3s">
+      <figure class="photo">
+        <img src="assets/still.jpg" alt="A quiet corner of a finished room — an armchair, a plant, clean light on a freshly painted wall" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="finish-line reveal" style="--d:.4s" data-i18n="finish_line">ואז הבית חוזר להיות בית.</p>
+    <p class="finish-services reveal" style="--d:.5s" data-i18n="finish_services">פנים · חוץ · קירות · עץ · מתכת</p>
+  </div>
+</section>
+
+<!-- ════════ SELECTED TRANSFORMATIONS ════════ -->
+<section class="diptych">
+  <div class="wrap">
+    <div class="folio reveal"><b>vi</b><span data-i18n="f_diptych">עבודות נבחרות</span></div>
+    <h2 class="reveal" style="--d:.15s" data-i18n="diptych_h2">שני מצבים של אותו חומר.</h2>
+
+    <!-- story one — wood restoration -->
+    <article class="t-story">
+      <span class="t-label reveal" data-i18n="tA_label">שחזור עץ · פרגולה</span>
+      <div class="pair">
+        <div class="before-block">
+          <figure class="photo reveal">
+            <img src="assets/grain.jpg" alt="Weathered deck boards before restoration, the grain silvered by sun and salt" loading="lazy" decoding="async">
+          </figure>
+          <div class="pair-caption"><span data-i18n="d_before">לפני</span><i data-i18n="d_before_i">מה שהשמש והמלח משאירים</i></div>
+        </div>
+        <div>
+          <figure class="photo reveal" style="--d:.15s">
+            <img src="assets/deck-shadow.jpg" alt="The restored wood — deep, oiled ipe in evening shadow" loading="lazy" decoding="async">
+          </figure>
+          <div class="pair-caption"><span data-i18n="d_after">אחרי</span><i data-i18n="d_after_i">מלוטש עד העץ ומשומן ביד</i></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- story two — one bedroom wall, two states -->
+    <article class="t-story">
+      <span class="t-label reveal" data-i18n="tB_label">שחזור קיר פנים · חדר שינה</span>
+      <div class="t-duo">
+        <div class="duo-a">
+          <figure class="photo reveal">
+            <img src="assets/wall-repair.jpg" alt="A bedroom wall mid-repair — cracks opened and filled, the furniture wrapped" loading="lazy" decoding="async">
+          </figure>
+          <div class="pair-caption"><span data-i18n="d_before">לפני</span><i data-i18n="b_before_i">נפתח, מולא והוחלק</i></div>
+        </div>
+        <div class="duo-b">
+          <figure class="photo reveal" style="--d:.15s">
+            <img src="assets/prepare.jpg" alt="The same wall painted a deep quiet green, the room settling back to itself" loading="lazy" decoding="async">
+          </figure>
+          <div class="pair-caption"><span data-i18n="d_after">אחרי</span><i data-i18n="b_after_i">צבוע, והחדר נושם שוב</i></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- story three — deck restoration, Caesarea -->
+    <article class="t-story">
+      <span class="t-label reveal" data-i18n="tC_label">שחזור דק · קיסריה</span>
+      <div class="pair">
+        <div class="before-block">
+          <figure class="photo reveal">
+            <img src="assets/pool.jpg" alt="Poolside wood deck in Caesarea after sanding and cleaning, ready for oil" loading="lazy" decoding="async">
+          </figure>
+          <div class="pair-caption"><span data-i18n="c_prepare">העץ החשוף</span><i data-i18n="c_before_i">מלוטש ונקי, רגע לפני השמן</i></div>
+        </div>
+        <div>
+          <figure class="photo reveal" style="--d:.15s">
+            <img src="assets/deck.jpg" alt="Poolside wood deck in Caesarea after restoration, cleaned and oiled" loading="lazy" decoding="async">
+          </figure>
+          <div class="pair-caption"><span data-i18n="c_finish">השכבה האחרונה</span><i data-i18n="c_after_i">השמן מחזיר לעץ עומק וחום</i></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ════════ TWO MOMENTS ════════ -->
+<section class="moments">
+  <div class="wrap">
+    <div class="moments-head">
+      <div class="folio reveal"><b>vii</b><span data-i18n="f_moments">בתים כמו שלכם</span></div>
+      <h2 class="reveal" style="--d:.15s" data-i18n="moments_h2">מאות בתים ברחבי הארץ.</h2>
+    </div>
+
+    <div class="moment moment-a">
+      <figure class="photo reveal">
+        <img src="assets/facade.jpg" alt="A white exterior corridor with grey pergola beams and shutters, freshly painted" loading="lazy" decoding="async">
+      </figure>
+      <div class="m-caption reveal" style="--d:.15s">
+        <span class="m-loc" data-i18n="moment_a_loc">זכרון יעקב</span>
+        <span class="m-line" data-i18n="moment_a_line">חזית שנצבעה מחדש בקפידה, ומקבלת את אור אחר הצהריים.</span>
+      </div>
+    </div>
+
+    <div class="moment moment-b">
+      <figure class="photo reveal">
+        <img src="assets/staircase.jpg" alt="A stairwell with freshly painted walls, lit from above by a skylight" loading="lazy" decoding="async">
+      </figure>
+      <div class="m-caption reveal" style="--d:.15s">
+        <span class="m-loc" data-i18n="moment_b_loc">צפון תל אביב</span>
+        <span class="m-line" data-i18n="moment_b_line">קירות בגימור מט ומשי, עם אותה הקפדה גם על מה שלא נצבע — הבית נשאר נקי ומסודר לאורך כל העבודה.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ COLOPHON — the family ════════ -->
+<section class="colophon">
+  <div class="wrap inner">
+    <div class="folio reveal"><b>viii</b><span data-i18n="f_family">המשפחה</span></div>
+    <p class="reveal" style="--d:.15s" data-i18n="family_p">ראיד למד את המקצוע מאביו, ובמשך עשרות שנים צובע בתים ברחבי הארץ. נידאל גדל בתוך העסק ומביא אליו את סבלנותו — ההכנה והגימור הם שלו. באסל עובד לצדם מילדות, ונושא את מלאכת המשפחה אל דור חדש. <em>כל עבודה שנכנסת לביתכם נושאת את שמנו.</em></p>
+  </div>
+</section>
+
+<!-- ════════ INVITATION ════════ -->
+<section class="invite" id="invite">
+  <div class="wrap">
+    <span class="label reveal" data-i18n="inv_label">כשתהיו מוכנים</span>
+    <h2 class="reveal" style="--d:.1s" data-i18n="inv_h2">ספרו לנו על <em>הבית שלכם.</em></h2>
+    <p class="invite-sub reveal" style="--d:.25s" data-i18n="inv_sub">שיחה, לא הצעת מחיר. נקשיב, נעבור אתכם בין החדרים, ונאמר ביושר מה הבית שלכם צריך — ומה לא.</p>
+    <div class="reveal" style="--d:.4s"><a class="invite-phone" href="tel:+972505911931">050-591-1931</a></div>
+    <p class="invite-referral reveal" style="--d:.5s" data-i18n="inv_referral">אם מישהו שלח אתכם אלינו, נשמח לדעת למי להודות.</p>
+    <p class="invite-note reveal" style="--d:.55s" data-i18n="inv_note">מפה לאוזן, מאז 1984</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="ft_1">זועבי · צבעים ממשפחה אחת</span>
+    <span data-i18n="ft_2">קיסריה · זכרון יעקב · תל אביב · השרון</span>
+  </div>
+</footer>
+
+<script>
+/* ── language ─────────────────────────────────────────────
+   Hebrew is the mother tongue; English is the guest.
+   Only text changes — layout, scroll and rhythm stay put. */
+const T = {
+  he: {
+    _title: "זועבי — שלושה דורות של צבעים, משפחה אחת",
+    _description: "צבעים מקצועיים לבתים היפים בארץ מאז 1984. משפחה בלבד, ללא קבלני משנה. קירות, עץ ומתכת — הגנה, תיקון, הכנה וגימור.",
+    wm: "זועבי", wm_sub: "צבעים · מאז 1984",
+    nav_cta: "ספרו לנו על הבית שלכם",
+    hero_h1: "שלושה דורות של צבעים. משפחה אחת.",
+    hero_sub: "צביעת פנים וחוץ מוקפדת לבתים יפים, מאז 1984.",
+    hero_line: "משפחת צבעים אחת — בלי קבלני משנה, ועם הביטחון להשאיר אותנו לבד בבית.",
+    hero_cta: "ספרו לנו על הבית שלכם",
+    p1: "40+ שנים", p2: "שלושה דורות", p3: "משפחה בלבד",
+    p4: "בלי פרסום", p5: "בעלי הבית משאירים לנו מפתח", p6: "ללא קבלני משנה",
+    f_trust: "הכול מתחיל במפתחות",
+    trust_q: "יש לקוחות שנשארים בבית בזמן שאנחנו עובדים. יש כאלה שבוחרים לצאת ומשאירים לנו מפתח.",
+    trust_aside: "במשך יותר מארבעים שנה, לקוחות מרוצים המשיכו להעביר את השם שלנו למשפחה, לחברים ולשכנים. כל בית חדש הגיע דרך הבית שקדם לו. גם היום, בעלי בתים רבים ממשיכים בשגרת חייהם בזמן שאנחנו עובדים. בעינינו, זה ההישג הגדול ביותר שלנו — גדול מכל קיר שצבענו.",
+    f_protect: "הגנה",
+    protect_h2: "לפני שאנחנו נוגעים בקיר, אנחנו מגינים על כל מה שבבית.",
+    protect_p: "רצפות, רהיטים, מדפים, כל ספר — מכוסים ומוגנים לפני שנפתח פח צבע אחד.",
+    f_repair: "תיקון",
+    repair_h2: "אנחנו מתקנים את מה שהזמן שחק.",
+    repair_p: "סדקים נפתחים וממולאים. הטיח נעשה שלם. עץ עייף חוזר לחיים. עבודה טובה מתחילה הרבה לפני הצבע — על קירות, עץ ומתכת.",
+    f_prepare: "הכנה",
+    prepare_h2: "מלוטש, מוכן — ונבדק באור משיק.",
+    prepare_p: "ההכנה היא רוב העבודה, והחלק שאיש לעולם לא יראה. שני דורות עובדים זה לצד זה, בשקט ובקפידה.",
+    f_finish: "גימור",
+    finish_h2: "כשהעבודה נעשית נכון,<br>רואים את הבית — לא את העבודה.",
+    finish_line: "ואז הבית חוזר להיות בית.",
+    finish_services: "פנים · חוץ · קירות · עץ · מתכת",
+    f_diptych: "עבודות נבחרות",
+    diptych_h2: "שני מצבים של אותו חומר.",
+    tA_label: "שחזור עץ · פרגולה",
+    tB_label: "שחזור קיר פנים · חדר שינה",
+    tC_label: "שחזור דק · קיסריה",
+    d_before: "לפני", d_before_i: "מה שהשמש והמלח משאירים",
+    d_after: "אחרי", d_after_i: "מלוטש עד העץ ומשומן ביד",
+    b_before_i: "נפתח, מולא והוחלק",
+    b_after_i: "צבוע, והחדר נושם שוב",
+    c_prepare: "העץ החשוף",
+    c_finish: "השכבה האחרונה",
+    c_before_i: "מלוטש ונקי, רגע לפני השמן",
+    c_after_i: "השמן מחזיר לעץ עומק וחום",
+    f_moments: "בתים כמו שלכם",
+    moments_h2: "מאות בתים ברחבי הארץ.",
+    moment_a_loc: "זכרון יעקב", moment_a_line: "חזית שנצבעה מחדש בקפידה, ומקבלת את אור אחר הצהריים.",
+    moment_b_loc: "צפון תל אביב", moment_b_line: "קירות בגימור מט ומשי, עם אותה הקפדה גם על מה שלא נצבע — הבית נשאר נקי ומסודר לאורך כל העבודה.",
+    f_family: "המשפחה",
+    family_p: "ראיד למד את המקצוע מאביו, ובמשך עשרות שנים צובע בתים ברחבי הארץ. נידאל גדל בתוך העסק ומביא אליו את סבלנותו — ההכנה והגימור הם שלו. באסל עובד לצדם מילדות, ונושא את מלאכת המשפחה אל דור חדש. <em>כל עבודה שנכנסת לביתכם נושאת את שמנו.</em>",
+    inv_label: "כשתהיו מוכנים",
+    inv_h2: "ספרו לנו על <em>הבית שלכם.</em>",
+    inv_sub: "שיחה, לא הצעת מחיר. נקשיב, נעבור אתכם בין החדרים, ונאמר ביושר מה הבית שלכם צריך — ומה לא.",
+    inv_referral: "אם מישהו שלח אתכם אלינו, נשמח לדעת למי להודות.",
+    inv_note: "מפה לאוזן, מאז 1984",
+    ft_1: "זועבי · צבעים ממשפחה אחת",
+    ft_2: "קיסריה · זכרון יעקב · תל אביב · השרון"
+  },
+  en: {
+    _title: "Zoabi — Three Generations of Family Painters",
+    _description: "Professional painting for fine homes since 1984. One family, no subcontractors. Walls, wood and metal — protection, repair, preparation and finishing.",
+    wm: "Zoabi", wm_sub: "Painters · Est. 1984",
+    nav_cta: "Tell us about your home",
+    hero_h1: "Three generations of family painters.",
+    hero_sub: "Meticulous interior and exterior painting for fine homes since 1984.",
+    hero_line: "One family of painters — no subcontractors, trusted to work alone inside the home.",
+    hero_cta: "Tell us about your home",
+    p1: "40+ years", p2: "Three generations", p3: "Family only",
+    p4: "No advertising", p5: "Trusted with keys", p6: "No subcontractors",
+    f_trust: "It begins with the keys",
+    trust_q: "Some clients stay at home while we work. Others choose to head out and leave us a key.",
+    trust_aside: "For more than forty years, satisfied clients have passed our name on to family, friends and neighbours. Each new home came through the one before it. Even today, many homeowners go about their daily lives while we work. To us, that is our greatest achievement — greater than any wall we have painted.",
+    f_protect: "Protect",
+    protect_h2: "Before we touch a wall, we protect everything inside the home.",
+    protect_p: "Floors, furniture, shelves, every book — wrapped and sealed before a single tin is opened.",
+    f_repair: "Repair",
+    repair_h2: "We repair what time has worn.",
+    repair_p: "Cracks are opened properly, then filled. Plaster made whole. Tired wood brought back to life. Good painting begins long before paint — on walls, wood and metal alike.",
+    f_prepare: "Prepare",
+    prepare_h2: "Sanded, primed — and checked in raking light.",
+    prepare_p: "Preparation is most of the work, and the part no one will ever see. Two generations working side by side, quietly and with care.",
+    f_finish: "Finish",
+    finish_h2: "The best finish <em>disappears into everyday life.</em>",
+    finish_line: "Then life begins again.",
+    finish_services: "Interiors · Exteriors · Walls · Wood · Metal",
+    f_diptych: "Selected transformations",
+    diptych_h2: "Two states of the same material.",
+    tA_label: "Wood restoration · Pergola",
+    tB_label: "Interior wall restoration · Bedroom",
+    tC_label: "Deck restoration · Caesarea",
+    d_before: "Before", d_before_i: "what sun and salt leave behind",
+    d_after: "After", d_after_i: "sanded back and oiled by hand",
+    b_before_i: "opened, filled and smoothed",
+    b_after_i: "painted — the room breathes again",
+    c_prepare: "The bare wood",
+    c_finish: "The final coat",
+    c_before_i: "sanded clean, a moment before the oil",
+    c_after_i: "the oil returning its depth and warmth",
+    f_moments: "Homes like yours",
+    moments_h2: "Hundreds of homes across the country.",
+    moment_a_loc: "Zichron Yaakov", moment_a_line: "A facade carefully repainted, receiving the afternoon light.",
+    moment_b_loc: "North Tel Aviv", moment_b_line: "Walls in matte and silk finishes, with the same care for everything left unpainted — the home stayed clean and orderly throughout the work.",
+    f_family: "The family",
+    family_p: "Raed learned the craft from his father and has spent decades painting homes across the country. Nidal grew up in the business and gives it his patience — preparation and finishing are his. Basel has worked alongside them since childhood, carrying the family's craft into a new generation. <em>Every painter who enters your home carries our name.</em>",
+    inv_label: "When you are ready",
+    inv_h2: "Tell us about <em>your home.</em>",
+    inv_sub: "A conversation, not a quote. We will listen, walk through the rooms with you, and tell you honestly what your home needs — and what it doesn't.",
+    inv_referral: "If someone sent you our way, we would be glad to know who to thank.",
+    inv_note: "Word of mouth since 1984",
+    ft_1: "Zoabi · Family painters",
+    ft_2: "Caesarea · Zichron Yaakov · Tel Aviv · The Sharon"
+  }
+};
+
+const langToggle = document.getElementById('langToggle');
+const metaDescription = document.querySelector('meta[name="description"]');
+let lang = localStorage.getItem('zoabi-lang') || 'he';
+
+function applyLang(l){
+  lang = l;
+  localStorage.setItem('zoabi-lang', l);
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l === 'he') ? 'rtl' : 'ltr';
+  document.title = T[l]._title;
+  if (metaDescription) metaDescription.setAttribute('content', T[l]._description);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = T[l][el.dataset.i18n];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  langToggle.textContent = (l === 'he') ? 'English' : 'עברית';
+}
+applyLang(lang); // no reload, scroll position untouched
+langToggle.addEventListener('click', () => applyLang(lang === 'he' ? 'en' : 'he'));
+
+/* gentle reveals */
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }
+}, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* nav settles once you move inward */
+const nav = document.getElementById('nav');
+function updateNavState(){
+  nav.classList.toggle('scrolled', scrollY > 60);
+}
+updateNavState();
+addEventListener('scroll', updateNavState, { passive: true });
+</script>
+
+</body>
+</html>
