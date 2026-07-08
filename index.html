@@ -101,7 +101,7 @@ html[lang="he"] .wordmark{ letter-spacing:.16em; }
 
 .label{
   font-family:var(--sans);
-  font-size:11px; font-weight:500;
+  font-size:12px; font-weight:500;
   letter-spacing:.28em; text-transform:uppercase;
   color:rgba(44,38,32,.60);
 }
@@ -111,7 +111,7 @@ html[lang="he"] .wordmark{ letter-spacing:.16em; }
 .folio{
   display:flex; align-items:center; gap:18px;
   font-family:var(--sans);
-  font-size:11px; font-weight:500;
+  font-size:12px; font-weight:500;
   letter-spacing:.28em; text-transform:uppercase;
   color:rgba(44,38,32,.60);
 }
@@ -177,12 +177,12 @@ nav:not(.scrolled) .nav-cta{ border-color:#F3EEE6; }
   color:var(--ink); text-decoration:none;
 }
 .wordmark span{
-  color:var(--ink-40); font-size:10px; font-family:var(--sans);
+  color:var(--ink-40); font-size:11px; font-family:var(--sans);
   letter-spacing:.28em; display:block; margin-top:2px; font-weight:500;
 }
 .nav-side{ display:flex; align-items:center; gap:clamp(20px, 2.5vw, 40px); }
 .nav-cta{
-  font-family:var(--sans); font-size:12px; font-weight:500;
+  font-family:var(--sans); font-size:13px; font-weight:500;
   letter-spacing:.18em; text-transform:uppercase;
   color:var(--ink); text-decoration:none;
   padding-bottom:4px;
@@ -192,7 +192,7 @@ nav:not(.scrolled) .nav-cta{ border-color:#F3EEE6; }
 .nav-cta:hover{ border-color:var(--ink); }
 .lang-toggle{
   appearance:none; background:none; border:none; cursor:pointer;
-  font-family:var(--sans); font-size:11px; font-weight:500;
+  font-family:var(--sans); font-size:12px; font-weight:500;
   letter-spacing:.18em; text-transform:uppercase;
   color:var(--ink-40);
   transition:color .6s;
@@ -240,7 +240,7 @@ nav:not(.scrolled) .nav-cta{ border-color:#F3EEE6; }
 }
 .hero-line{
   margin-top:30px;
-  font-size:14.5px;
+  font-size:15.5px;
   color:var(--ink-60);
   max-width:44ch;
 }
@@ -279,21 +279,23 @@ html[dir="rtl"] .hero-cta:hover::after{ transform:translateX(-4px); }
   border-bottom:1px solid var(--ink-08);
   padding:clamp(48px, 7vh, 80px) 0;
 }
+.proof .wrap{ max-width:1600px; } /* the ledger alone may use a wider stage */
 .proof ul{
   list-style:none;
   display:flex; flex-wrap:wrap;
   justify-content:center;
-  column-gap:clamp(28px, 3.5vw, 56px);
+  column-gap:clamp(18px, 2vw, 40px);
   row-gap:18px;
 }
 .proof li{
   font-family:var(--sans);
-  font-size:12px; font-weight:500;
-  letter-spacing:.24em; text-transform:uppercase;
+  font-size:13px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase;
   color:var(--ink-60);
-  display:flex; align-items:center; gap:clamp(28px, 3.5vw, 56px);
+  display:flex; align-items:center; gap:clamp(18px, 2vw, 40px);
   white-space:nowrap;
 }
+html[lang="he"] .proof li{ letter-spacing:.08em; }
 .proof li + li::before{
   content:"";
   width:1px; height:14px;
@@ -324,7 +326,7 @@ html[dir="rtl"] .hero-cta:hover::after{ transform:translateX(-4px); }
 }
 .plate-trust blockquote em{ color:var(--umber); }
 .plate-trust .aside{
-  font-size:15.5px;
+  font-size:16.5px;
   color:var(--ink-60);
   max-width:40ch;
   padding-bottom:8px;
@@ -357,7 +359,7 @@ html[dir="rtl"] .hero-cta:hover::after{ transform:translateX(-4px); }
 }
 .plate-protect p{
   margin-top:22px;
-  font-size:15.5px;
+  font-size:16.5px;
   color:var(--ink-60);
 }
 
@@ -383,7 +385,7 @@ html[dir="rtl"] .hero-cta:hover::after{ transform:translateX(-4px); }
 }
 .plate-repair p{
   margin-top:22px;
-  font-size:15.5px;
+  font-size:16.5px;
   color:var(--ink-60);
 }
 .plate-repair .photo{ height:min(84vh, 900px); }
@@ -423,7 +425,7 @@ html[dir="rtl"] .plate-prepare .plate-scrim{
 }
 .plate-prepare p{
   margin-top:18px;
-  font-size:15px;
+  font-size:16px;
   color:rgba(243,237,223,.78);
   max-width:46ch;
 }
@@ -463,7 +465,7 @@ html[lang="he"] .plate-finish .finish-media{
 }
 .plate-finish .finish-services{
   margin:18px auto 0;
-  font-size:13px;
+  font-size:14px;
   letter-spacing:.2em; text-transform:uppercase;
   color:var(--ink-40); font-weight:500;
 }
@@ -490,7 +492,7 @@ html[lang="he"] .plate-finish .finish-media{
 .t-story{ margin-top:clamp(110px, 14vh, 190px); }
 .t-label{
   display:block;
-  font-size:11px; letter-spacing:.26em; text-transform:uppercase;
+  font-size:12px; letter-spacing:.26em; text-transform:uppercase;
   color:rgba(239,232,218,.62); font-weight:500;
 }
 .diptych .pair{
@@ -500,7 +502,12 @@ html[lang="he"] .plate-finish .finish-media{
   gap:3px;
 }
 /* the "before" must sit where reading begins, in both directions */
-.diptych .photo{ aspect-ratio:4/5; max-height:76vh; }
+.diptych .photo{ aspect-ratio:4/5; max-height:84vh; }
+/* on larger screens the plates breathe past the text margins */
+@media (min-width: 900px){
+  .diptych .pair,
+  .t-duo{ margin-inline:calc(clamp(24px, 6vw, 96px) * -1); }
+}
 /* the bedroom wall: two states of one wall, gently staggered */
 .t-duo{
   margin-top:30px;
@@ -513,12 +520,12 @@ html[lang="he"] .plate-finish .finish-media{
 .diptych .pair-caption{
   display:flex; justify-content:space-between;
   margin-top:20px;
-  font-size:11px; letter-spacing:.26em; text-transform:uppercase;
+  font-size:12px; letter-spacing:.26em; text-transform:uppercase;
   color:rgba(239,232,218,.68); font-weight:500;
 }
 .diptych .pair-caption i{
   font-family:var(--serif); font-style:italic; font-weight:300;
-  font-size:14px; text-transform:none; letter-spacing:.02em;
+  font-size:15px; text-transform:none; letter-spacing:.02em;
   color:rgba(239,232,218,.74);
 }
 
@@ -542,18 +549,18 @@ html[lang="he"] .plate-finish .finish-media{
   display:flex; align-items:baseline; gap:32px; flex-wrap:wrap;
 }
 .moment .m-loc{
-  font-size:11px; letter-spacing:.26em; text-transform:uppercase;
+  font-size:12px; letter-spacing:.26em; text-transform:uppercase;
   color:rgba(44,38,32,.60); font-weight:500;
 }
 .moment .m-line{
   font-family:var(--serif); font-style:italic; font-weight:300;
-  font-size:clamp(16px, 1.5vw, 21px);
+  font-size:clamp(17px, 1.5vw, 21px);
   color:var(--ink-60);
 }
-.moment-a{ display:grid; grid-template-columns:3fr 6fr 3fr; }
+.moment-a{ display:grid; grid-template-columns:2.5fr 7fr 2.5fr; }
 .moment-a > *{ grid-column:2; }
-.moment-a .photo{ aspect-ratio:4/5; max-height:76vh; }
-.moment-b{ display:grid; grid-template-columns:4fr 8fr; }
+.moment-a .photo{ aspect-ratio:4/5; max-height:84vh; }
+.moment-b{ display:grid; grid-template-columns:2.5fr 9.5fr; }
 .moment-b > *{ grid-column:2; }
 .moment-b .photo{ aspect-ratio:16/10; }
 .moment-b .photo img{ object-position:center 25%; }
@@ -620,7 +627,7 @@ html[lang="he"] .plate-finish .finish-media{
 }
 .invite-note{
   margin-top:60px;
-  font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+  font-size:13px; letter-spacing:.22em; text-transform:uppercase;
   color:rgba(44,38,32,.60); font-weight:500;
 }
 
@@ -631,7 +638,7 @@ footer{
 footer .wrap{
   display:flex; justify-content:space-between; align-items:center;
   flex-wrap:wrap; gap:16px;
-  font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  font-size:12px; letter-spacing:.2em; text-transform:uppercase;
   color:rgba(60,48,34,.58); font-weight:500;
 }
 
@@ -644,10 +651,10 @@ footer .wrap{
   nav{ padding:22px 24px; }
   nav.scrolled{ padding:14px 24px; }
   .wordmark{ font-size:15px; letter-spacing:.26em; white-space:nowrap; }
-  .wordmark span{ font-size:9px; white-space:nowrap; }
+  .wordmark span{ font-size:10px; white-space:nowrap; }
   .nav-side{ gap:16px; }
-  .nav-cta{ font-size:10px; letter-spacing:.14em; white-space:nowrap; }
-  .lang-toggle{ font-size:10px; letter-spacing:.14em; }
+  .nav-cta{ font-size:11px; letter-spacing:.14em; white-space:nowrap; }
+  .lang-toggle{ font-size:11px; letter-spacing:.14em; }
 }
 @media (max-width: 600px){
   .nav-cta{ display:none; } /* the invitation closes the story; the nav stays quiet */
@@ -665,7 +672,7 @@ footer .wrap{
   .proof{ padding:40px 0; }
   .proof .wrap{ text-align:center; }
   .proof ul{ flex-direction:column; align-items:center; row-gap:14px; }
-  .proof li{ gap:0; font-size:12.5px; letter-spacing:.3em; }
+  .proof li{ gap:0; font-size:13.5px; letter-spacing:.3em; }
   .proof li + li::before{ display:none; }
   .mobile-proof-contact{
     display:inline-block;
@@ -759,8 +766,8 @@ footer .wrap{
       <li class="reveal" data-i18n="p1">40+ שנים</li>
       <li class="reveal" style="--d:.08s" data-i18n="p2">שלושה דורות</li>
       <li class="reveal" style="--d:.16s" data-i18n="p3">משפחה בלבד</li>
-      <li class="reveal" style="--d:.24s" data-i18n="p4">בלי פרסום</li>
-      <li class="reveal" style="--d:.32s" data-i18n="p5">בעלי הבית משאירים לנו מפתח</li>
+      <li class="reveal" style="--d:.24s" data-i18n="p4">לקוחות ממליצים וחוזרים</li>
+      <li class="reveal" style="--d:.32s" data-i18n="p5">סומכים עלינו עם מפתח לביתם</li>
       <li class="reveal" style="--d:.4s" data-i18n="p6">ללא קבלני משנה</li>
     </ul>
     <a class="mobile-proof-contact reveal" style="--d:.48s" href="tel:+972505911931">050-591-1931</a>
@@ -972,7 +979,7 @@ const T = {
     hero_line: "משפחת צבעים אחת — בלי קבלני משנה, ועם הביטחון להשאיר אותנו לבד בבית.",
     hero_cta: "ספרו לנו על הבית שלכם",
     p1: "40+ שנים", p2: "שלושה דורות", p3: "משפחה בלבד",
-    p4: "בלי פרסום", p5: "בעלי הבית משאירים לנו מפתח", p6: "ללא קבלני משנה",
+    p4: "לקוחות ממליצים וחוזרים", p5: "סומכים עלינו עם מפתח לביתם", p6: "ללא קבלני משנה",
     f_trust: "הכול מתחיל במפתחות",
     trust_q: "יש לקוחות שנשארים בבית בזמן שאנחנו עובדים. יש כאלה שבוחרים לצאת ומשאירים לנו מפתח.",
     trust_aside: "במשך יותר מארבעים שנה, לקוחות מרוצים המשיכו להעביר את השם שלנו למשפחה, לחברים ולשכנים. כל בית חדש הגיע דרך הבית שקדם לו. גם היום, בעלי בתים רבים ממשיכים בשגרת חייהם בזמן שאנחנו עובדים. בעינינו, זה ההישג הגדול ביותר שלנו — גדול מכל קיר שצבענו.",
